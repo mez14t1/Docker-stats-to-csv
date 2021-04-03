@@ -29,5 +29,3 @@ while true;
     do 
     docker stats --format "{{.ID}}${delimiter}{{.Name}}${delimiter}{{.CPUPerc}}${delimiter}{{.MemUsage}}${delimiter}{{.MemPerc}}${delimiter}{{.NetIO}}${delimiter}{{.BlockIO}}${delimiter}{{.PIDs}}" --no-stream|sed -e "s/ \/ /${delimiter}/g"  | tee --append $fileName;sleep 1 ; done
 
-
-#    | sed -n '1!p'|sed -e "s/\s\{3,\}/;/g"  | tee --append stats.csv;sleep 1 ; done
